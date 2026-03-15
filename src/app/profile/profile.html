@@ -1,0 +1,49 @@
+I am your Profiles
+
+<button (click)="onButtonClick($event)">Click this button</button>
+
+<div>
+    <h3>Counter App</h3>
+    <div class="countVal">{{ count }}</div>
+    <div class="count-ways">
+        <div class="inc" (click)="count = count + 1">Increment</div>
+        <div class="inc" (click)="count = 0">Reset</div>
+        <div class="dec" (click)="count = count == 0 ? 0 : count - 1">Decrement</div>
+        <div class="event" (mouseover)="onButtonClick($event)">Click</div>
+        <div class="event" (mouseleave)="onButtonClick($event)">Click</div>
+    </div>
+    <label for="name" >Enter here</label>
+    <input type="text" name="text" id="name" (input)="enterName($event)">
+    <div class="text">
+        You have written this value => {{ name }}
+    </div>
+    <hr>
+    <div class="email">
+        <!-- // template reference variable -->
+        <input type="email" name="" #emailTemplate>
+        <button (click)="enterEmail(emailTemplate.value)">Submit</button>
+    </div>
+    <h1>{{ number1() }}</h1>
+    <h2>{{ count }}</h2>
+    <button (click)="signalClick()">Change Value</button>
+    <button (click)="count=1">Change Value Again</button>
+    <h3>Loop of Names</h3>
+    @for (student of students; track student.name; let i = $index, odd = $odd, count = $count) {
+        <div class="student">
+            <h4>Name: {{ student.name }}</h4>
+            <p>Age: {{ student.age }}</p>
+            <p>{{i}}</p>
+        </div>
+    }
+    @empty {
+        <p>No students found.</p>
+    }
+    @if (showName) {
+        <h2>Hitesh</h2>
+    }
+</div>
+
+<h1>My todo App</h1>
+
+<br>
+<app-todos></app-todos>

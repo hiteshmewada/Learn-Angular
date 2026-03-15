@@ -1,0 +1,14 @@
+.countVal{
+    background: green;
+    width: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}   
+.count-ways{
+    display: flex;
+    gap: 10px;
+    div{
+        background: red;
+        padding: 10px;
+    }
+}

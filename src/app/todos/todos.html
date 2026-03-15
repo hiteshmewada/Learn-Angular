@@ -1,0 +1,24 @@
+<h1>This are the list of todos</h1>
+@for (todo of todos; track todo; let index = $index) {
+    <h2>{{ todo.title }} <span class="completion">{{ todo.completed ? 'Completed' : 'Not Completed' }}</span>
+        @if (!todo.completed) {
+            <button (click)="todo.completed = true">Mark as Completed</button>
+        }
+        <button (click)="removeTodo(index)">Remove</button>
+    </h2>
+
+}
+
+<h2>Add your todos</h2>
+<input type="text" placeholder="Enter todo title" #todoTitle>
+<button (click)="addTodo(todoTitle.value, todoTitle)">Add Todo</button>
+
+<!-- // Dynamic styling -->
+<p [style.color]="'blue'">hie
+
+</p>
+
+<!-- Directives is a class that add extra behavior to the element in which it is applied. -->
+ <!-- Component Directives => *ngIf, *ngFor, *ngSwitch => used in component template to conditionally render or repeat elements based on data.
+ Attribute Directives => [style], [class], [ngClass], [ngStyle] => used to modify the appearance or behavior of an element.
+ Structural Directives => *ngIf, *ngFor, *ngSwitch => used to change the structure of the DOM. -->
